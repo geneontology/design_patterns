@@ -1,0 +1,28 @@
+pattern_name: activator_activity
+
+classes:
+  molecular_function: GO_
+
+  
+relations:
+  directly positively regulates: RO_
+
+
+vars:
+  regulated_activity: 
+  
+name: 
+  text: "%s activator activity"
+  vars:
+  
+def:
+  text: Direct interaction with a gene product or complex that has %s, resulting in positive regulation of its %s. Direct interaction in this case includes binding and interactions leading to covalent modification."
+  vars: 
+    - regulated_activity
+    - regulated_activity
+
+    
+equivalentTo:
+  text: "'molecular_function that 'directly positively regulates' some %s"
+  vars: 
+    - regulated_activity

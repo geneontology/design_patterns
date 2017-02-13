@@ -19,7 +19,11 @@ name:
 
   
 def:
-  text: Direct interaction with a gene product or complex that has %s, resulting in positive regulation of its %s. Direct interaction in this case includes binding and interactions leading to covalent modification."
+  text: >
+    Direct interaction with a gene product or complex that has %s, 
+    resulting in positive regulation of its %s. Direct interaction 
+    in this case includes binding and interactions leading to 
+    covalent modification.
   vars: 
     - regulated_activity
     - regulated_activity

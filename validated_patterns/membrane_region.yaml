@@ -20,6 +20,7 @@ name:
     
 def: 
   text: "The portion of the %s that is part of the %s."
+  vars:
     - encompassing_membrane
     - intersecting_region
     

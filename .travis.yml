@@ -11,5 +11,5 @@ install:
 
 # test script
 script:
-   - wget https://github.com/dosumis/dead_simple_owl_design_patterns/blob/master/spec/DOSDP_schema_full.yaml
+   - wget https://raw.githubusercontent.com/dosumis/dead_simple_owl_design_patterns/master/spec/DOSDP_schema_full.yaml
    - python src/test_patterns.py validated_patterns/

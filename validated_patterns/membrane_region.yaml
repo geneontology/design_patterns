@@ -19,7 +19,7 @@ name:
     - intersecting_region
     
 def: 
-  text: "The portion of the %s that is part of the %s." [GOC:mah]
+  text: "The portion of the %s that is part of the %s."
     - encompassing_membrane
     - intersecting_region
     

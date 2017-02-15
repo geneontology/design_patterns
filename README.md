@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/geneontology/design_patterns.svg?branch=master)](https://travis-ci.org/geneontology/design_patterns)
+
+
 # design_patterns
 
 A repository of design patterns for GO, written using [DOS-DP](https://github.com/dosumis/dead_simple_owl_design_patterns).

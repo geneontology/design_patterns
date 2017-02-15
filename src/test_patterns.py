@@ -1,23 +1,33 @@
 import yaml
 from jsonschema import Draft4Validator
 import sys
+import glob
+import re
+import warnings
 
-dosdp_core_file = open("DOSDP_schema_core.yaml", "r")
-dosdp_core = yaml.load(dosdp_core_file.read())
 
-v = Draft4Validator(dosdp_core)
+def test_jschema(validator, file_path):
+    test_file = open(file_path, "r")
+    test_pattern = yaml.load(test_file.read())
 
-pattern_docs = []
+    if not validator.is_valid(test_pattern):
+        es = validator.iter_errors(test_pattern)
+        for e in es:
+            warnings.warn(str(e))
+            return False
+    else:
+        return True
 
+dosdp_full_file = open("DOSDP_schema_full.yaml", "r")
+dosdp = yaml.load(dosdp_full_file.read())
+
+v = Draft4Validator(dosdp)
+
+pattern_docs = glob.glob(sys.argv[1] + "*.yaml")
+stat = True
 for pattern in pattern_docs:
-  pattern_file = open(p, "r")
-  pattern_positive = yaml.load(pattern_file.read())
-
-  if not v.is_valid(pattern_file):
-      es = v.iter_errors(pattern_file)
-      for e in es: 
-          print(e)
-      sys.exit(1)
-    
-  else:
-      print(True)
+  print("Checking %s" % pattern)
+  if not test_jschema(v, pattern): stat = False
+  
+if not stat:
+    sys.exit(1)

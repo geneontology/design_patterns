@@ -30,8 +30,7 @@ def:
   vars: 
     - regulated_activity
     - regulated_activity
-  xrefs: 
-    - def_dbxrefs
+  xrefs: def_dbxrefs
 
     
 equivalentTo:
